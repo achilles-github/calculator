@@ -1,22 +1,35 @@
 import java.io.*;
+import java.math.BigInteger;
 import java.util.Arrays;
 //import java.lang.Math;
 class calculate{
-	public double multiply(double a, double b)
+	public String multiply(double a, double b)
 	{
-		return a * b;
+		double c = a * b;
+		String[] dec = (Double.toString(c)).split("\\.");
+		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return round;
 	}
-	public double add(double a, double b)
+	public String add(double a, double b)
 	{
-		return a + b;
+		double c = a + b;
+		String[] dec = (Double.toString(c)).split("\\.");
+		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return round;
 	}
-	public double minus(double a, double b)
+	public String minus(double a, double b)
 	{
-		return a - b;
+		double c = a - b;
+		String[] dec = (Double.toString(c)).split("\\.");
+		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return round;
 	}
-	public double divide(double a, double b)
+	public String divide(double a, double b)
 	{
-		return a / b;
+		double c = a / b;
+		String[] dec = (Double.toString(c)).split("\\.");
+		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return round;
 	}
 }
 
@@ -36,32 +49,23 @@ class demo{
 		    	
 		    	if(s.equals("1"))
 		    	{
-		    		double c = op.add(Double.parseDouble(a), Double.parseDouble(b));
-		    		dec = (Double.toString(c)).split("\\.");
-		    		//System.out.println(Arrays.asList(dec)); 
-		    		String round = (Integer.parseInt(dec[1]) == 0) ? Integer.toString((int)c) : Double.toString(c);
-		    		System.out.println(a+" + "+b+" = "+ round);
+		    		String c = op.add(Double.parseDouble(a), Double.parseDouble(b));
+		    		System.out.println(a+" + "+b+" = "+ c);
 		    	}
 		    	if(s.equals("2"))
 		    	{
-		    		double c = op.multiply(Double.parseDouble(a), Double.parseDouble(b));
-		    		dec = (Double.toString(c)).split("\\.");
-		    		String round = (Integer.parseInt(dec[1]) == 0) ? Integer.toString((int)c) : Double.toString(c);
-		    		System.out.println(a+" * "+b + " = "+round);
+		    		String c = op.multiply(Double.parseDouble(a), Double.parseDouble(b));
+		    		System.out.println(a+" * "+b + " = "+c);
 		    	}
 		    	if(s.equals("3"))
 		    	{
-		    		double c = op.minus(Double.parseDouble(a), Double.parseDouble(b));
-		    		dec = (Double.toString(c)).split("\\.");
-		    		String round = (Integer.parseInt(dec[1]) == 0) ? Integer.toString((int)c) : Double.toString(c);
-		    		System.out.println(a+" - "+b + " = "+round);
+		    		String c = op.minus(Double.parseDouble(a), Double.parseDouble(b));
+		    		System.out.println(a+" - "+b + " = "+c);
 		    	}
 		    	if(s.equals("4"))
 		    	{
-		    		double c = op.divide(Double.parseDouble(a), Double.parseDouble(b));
-		    		dec = (Double.toString(c)).split("\\.");
-		    		//String round = (Integer.parseInt(dec[1]) == 0) ? Integer.toString((int)c) : Double.toString(c);
-		    		System.out.println(a+" / "+b + " = "+Double.toString(c));
+		    		String c = op.divide(Double.parseDouble(a), Double.parseDouble(b));
+		    		System.out.println(a+" / "+b + " = "+c);
 		    	}
 		}
 		catch(IOException e)
