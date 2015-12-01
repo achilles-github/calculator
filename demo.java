@@ -1,44 +1,55 @@
 import java.io.*;
-import java.math.BigInteger;
+//import java.math.BigInteger;
 import java.util.Arrays;
 //import java.lang.Math;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 class calculate{
 	public String multiply(double a, double b)
 	{
 		double c = a * b;
 		String[] dec = (Double.toString(c)).split("\\.");
-		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
-		return round;
+		String output = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return output;
 	}
 	public String add(double a, double b)
 	{
 		double c = a + b;
 		String[] dec = (Double.toString(c)).split("\\.");
-		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
-		return round;
+		String output = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return output;
 	}
 	public String minus(double a, double b)
 	{
 		double c = a - b;
 		String[] dec = (Double.toString(c)).split("\\.");
-		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
-		return round;
+		String output = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return output;
 	}
 	public String divide(double a, double b)
 	{
 		double c = a / b;
 		String[] dec = (Double.toString(c)).split("\\.");
-		String round = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
-		return round;
+		String output = (dec[1].equals("0")) ? Integer.toString((int)c) : Double.toString(c);
+		return output;
 	}
 }
 
 class demo{
-	
+	public void start() 
+	{ 
+		JFrame f=new JFrame("Type the name of frame"); 
+		JLabel l=new JLabel("Anurag jain(csanuragjain)"); 
+		f.add(l); f.setSize(400,400); 
+		f.setVisible(true); 
+	}
+
+
 	public static void main(String args[]){
-		System.out.println("1 => add, 2 => multiply, 3 => minus, 4 => divide");
+		//System.out.println("1 => add, 2 => multiply, 3 => minus, 4 => divide");
 		try{
-		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+		        /*BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		    	String s = bufferRead.readLine();
 		    	System.out.println("Please enter the first number.");
 		    	String a = bufferRead.readLine();
@@ -66,11 +77,14 @@ class demo{
 		    	{
 		    		String c = op.divide(Double.parseDouble(a), Double.parseDouble(b));
 		    		System.out.println(a+" / "+b + " = "+c);
-		    	}
+		    	}*/
+		    	new demo().start();
 		}
-		catch(IOException e)
+		catch(Exception e)
 		{
-			e.printStackTrace();
+			StringWriter errors = new StringWriter();
+			e.printStackTrace(new PrintWriter(errors));
+			JOptionPane.showMessageDialog(null,errors.toString());
 		}
 		
 	}	
