@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.border.*;
 
 
@@ -51,14 +52,42 @@ class overlay{
                 gui.setBorder(new EmptyBorder(2, 3, 2, 3));
                 
                 LineBorder border = new LineBorder(Color.BLACK);
-                Dimension d = new Dimension(380,35);
+                Dimension tfd = new Dimension(380,35);
+                Dimension btd = new Dimension(80,80);
 		
 		//JLabel l=new JLabel("Anurag jain(csanuragjain)"); 
 		JTextField text = new JTextField("0");
 		text.setBorder(border);
-		text.setPreferredSize(d);
-        	text.setMaximumSize(d);
+		text.setPreferredSize(tfd);
+        	text.setMaximumSize(tfd);
 		gui.add(text); 
+		
+		for(int i=0;i<10;i++)
+		{
+			JButton bt = new JButton(Integer.toString(i));
+			bt.setPreferredSize(btd);
+        		bt.setMaximumSize(btd);
+        		gui.add(bt); 
+		}
+		/*JButton bt = new JButton("+");
+		bt.setPreferredSize(btd);
+		bt.setMaximumSize(btd);
+		gui.add(bt); 
+		
+		JButton bt = new JButton("-");
+		bt.setPreferredSize(btd);
+		bt.setMaximumSize(btd);
+		gui.add(bt); 
+		
+		JButton bt = new JButton("*");
+		bt.setPreferredSize(btd);
+		bt.setMaximumSize(btd);
+		gui.add(bt); 
+		
+		JButton bt = new JButton("/");
+		bt.setPreferredSize(btd);
+		bt.setMaximumSize(btd);
+		gui.add(bt); */
 		
 		f.add(gui);
 		
