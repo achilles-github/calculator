@@ -1,10 +1,16 @@
 import java.io.*;
+import java.awt.*;
 //import java.math.BigInteger;
 import java.util.Arrays;
 //import java.lang.Math;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.border.*;
+
+
 class calculate{
 	public String multiply(double a, double b)
 	{
@@ -36,14 +42,33 @@ class calculate{
 	}
 }
 
-class demo{
+class overlay{
 	public void start() 
 	{ 
-		JFrame f=new JFrame("Type the name of frame"); 
-		JLabel l=new JLabel("Anurag jain(csanuragjain)"); 
-		f.add(l); f.setSize(400,400); 
+		JFrame f=new JFrame("Calculator"); 
+		
+		JPanel gui = new JPanel(new FlowLayout(5));
+                gui.setBorder(new EmptyBorder(2, 3, 2, 3));
+                
+                LineBorder border = new LineBorder(Color.BLACK);
+                Dimension d = new Dimension(380,35);
+		
+		//JLabel l=new JLabel("Anurag jain(csanuragjain)"); 
+		JTextField text = new JTextField("0");
+		text.setBorder(border);
+		text.setPreferredSize(d);
+        	text.setMaximumSize(d);
+		gui.add(text); 
+		
+		f.add(gui);
+		
+		f.setSize(400,400); 
 		f.setVisible(true); 
 	}
+}
+
+class demo{
+	
 
 
 	public static void main(String args[]){
@@ -78,7 +103,7 @@ class demo{
 		    		String c = op.divide(Double.parseDouble(a), Double.parseDouble(b));
 		    		System.out.println(a+" / "+b + " = "+c);
 		    	}*/
-		    	new demo().start();
+		    	new overlay().start();
 		}
 		catch(Exception e)
 		{
