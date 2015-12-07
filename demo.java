@@ -63,6 +63,7 @@ class overlay{
 		f.add(gui);
 		
 		f.setSize(400,400); 
+		f.setResizable(false);
 		f.setVisible(true); 
 	}
 }
