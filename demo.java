@@ -53,7 +53,7 @@ class overlay{
                 
                 LineBorder border = new LineBorder(Color.BLACK);
                 Dimension tfd = new Dimension(380,35);
-                Dimension btd = new Dimension(80,80);
+                Dimension btd = new Dimension(70,70);
 		
 		//JLabel l=new JLabel("Anurag jain(csanuragjain)"); 
 		JTextField text = new JTextField("0");
@@ -61,38 +61,43 @@ class overlay{
 		text.setPreferredSize(tfd);
         	text.setMaximumSize(tfd);
 		gui.add(text); 
-		
+		JButton[] number = new JButton[10];
 		for(int i=0;i<10;i++)
 		{
-			JButton bt = new JButton(Integer.toString(i));
-			bt.setPreferredSize(btd);
-        		bt.setMaximumSize(btd);
-        		gui.add(bt); 
+			number[i] = new JButton(Integer.toString(i));
+			number[i].setPreferredSize(btd);
+        		number[i].setMaximumSize(btd);
+        		gui.add(number[i]); 
 		}
-		/*JButton bt = new JButton("+");
-		bt.setPreferredSize(btd);
-		bt.setMaximumSize(btd);
-		gui.add(bt); 
+		JButton plus = new JButton("+");
+		plus.setPreferredSize(btd);
+		plus.setMaximumSize(btd);
+		gui.add(plus); 
 		
-		JButton bt = new JButton("-");
-		bt.setPreferredSize(btd);
-		bt.setMaximumSize(btd);
-		gui.add(bt); 
+		JButton minus = new JButton("-");
+		minus.setPreferredSize(btd);
+		minus.setMaximumSize(btd);
+		gui.add(minus); 
 		
-		JButton bt = new JButton("*");
-		bt.setPreferredSize(btd);
-		bt.setMaximumSize(btd);
-		gui.add(bt); 
+		JButton multiply = new JButton("*");
+		multiply.setPreferredSize(btd);
+		multiply.setMaximumSize(btd);
+		gui.add(multiply); 
 		
-		JButton bt = new JButton("/");
-		bt.setPreferredSize(btd);
-		bt.setMaximumSize(btd);
-		gui.add(bt); */
+		JButton divide = new JButton("/");
+		divide.setPreferredSize(btd);
+		divide.setMaximumSize(btd);
+		gui.add(divide);
+		
+		JButton equal = new JButton("=");
+		equal.setPreferredSize(btd);
+		equal.setMaximumSize(btd);
+		gui.add(equal);
 		
 		f.add(gui);
 		
-		f.setSize(400,400); 
-		f.setResizable(false);
+		f.setSize(400,310); 
+		//f.setResizable(false);
 		f.setVisible(true); 
 	}
 }
